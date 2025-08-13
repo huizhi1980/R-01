@@ -13,12 +13,6 @@
     .image_1,
     .image_2,
     .image_3 {
-      /* 使用视口高度单位 */
-      height: 100vh;
-      width: 100%;
-
-      /* 确保图片居中显示 */
-      background-position: center;
       background-repeat: no-repeat;
     }
     .image_1 {
@@ -44,6 +38,27 @@
       background-size: cover;
       height: 680px;
       width: 100%;
+    }
+    @media (max-width: 768px) {
+      .image_1,
+      .image_2,
+      .image_3 {
+        /* 在移动端禁用 fixed 属性 */
+        background-attachment: scroll;
+
+        /* 针对小屏幕优化背景大小 */
+        background-size: cover;
+      }
+    }
+
+    /* 极端小屏幕优化 */
+    @media (max-width: 480px) {
+      .image_1,
+      .image_2,
+      .image_3 {
+        /* 确保在小屏幕上图片完全覆盖 */
+        background-size: cover;
+      }
     }
   </style>
   <body>
